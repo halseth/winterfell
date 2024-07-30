@@ -12,6 +12,7 @@ use tracing_forest::ForestLayer;
 use tracing_subscriber::fmt::format::FmtSpan;
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt, EnvFilter};
 use winterfell::StarkProof;
+use hex_literal::hex;
 
 use examples::{fibonacci, rescue, vdf, ExampleOptions, ExampleType};
 #[cfg(feature = "std")]
@@ -108,6 +109,7 @@ fn main() {
 
     #[cfg(feature = "std")]
     println!("Proof hash: {}", hex::encode(blake3::hash(&proof_bytes).as_bytes()));
+    println!("Proof : {}", hex::encode(&proof_bytes));
 
     // verify the proof
     println!("---------------------");

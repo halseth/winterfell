@@ -66,9 +66,10 @@ impl<H: ElementHasher> FibExample<H> {
         let now = Instant::now();
         let result = compute_fib_term(sequence_length);
         println!(
-            "Computed Fibonacci sequence up to {}th term in {} ms",
+            "Computed Fibonacci sequence up to {}th term in {} ms: {}",
             sequence_length,
-            now.elapsed().as_millis()
+            now.elapsed().as_millis(),
+            result,
         );
 
         FibExample {
